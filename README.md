@@ -21,4 +21,4 @@ Output
 The code is in [scuba2.py](scuba2.py), where ``scuba850`` and ``scuba450`` are the classes for source 
 extraction; ``region`` is a function to generate region files; and ``doubleGauss`` is a function to compute 
 a double-Gaussian model. Please read the comments of ``scuba850`` for an understanding of the source extraction 
-procedure. A simple demo of running the code is shown in [demo.ipynb](demo.ipynb).
+procedure. A simple demo of how to run the code is shown in [demo.ipynb](demo.ipynb).
