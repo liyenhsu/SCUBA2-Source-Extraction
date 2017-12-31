@@ -40,7 +40,7 @@ def doubleGauss(x, c1, sigma1, sigma2):
 class scuba850(object):
   
     def __init__(self, image):
-        """load the fits file"""
+        "load the fits file"
         data=fits.open(image)
         s1=data[0].data[0,:,:]  # flux  
         s2=data[1].data[0,:,:]  # variance
@@ -63,13 +63,13 @@ class scuba850(object):
         self.snr = s3
 
     def mkrms(self, name='s8_rms.fits'):
-        """write the rms map to a fits file"""
+        "write the rms map to a fits file"
         fits.writeto(name, self.noise, header=self.header,overwrite=True)
         print 'central noise value (mJy/beam):', self.noise.min()
     
 
     def mkpsf(self, name='psf850.fits', level=3.0, thresh=7.0):
-        """ make the PSF """
+        "make the PSF"
         print 'name:',name
         print 'level:',level    # define the area for source detection: noise <= level * noise.min()
         print 'thresh:',thresh  # detection threshold (snr)
@@ -136,7 +136,7 @@ class scuba850(object):
 
     
     def extract(self,name,level=3.0,thresh=4.0,blend=7.25,r_psf=50,psf=None):
-        """run source extraction, producing a csv file, a region file, and residul images"""
+        "run source extraction, producing a csv file, a region file, and residul images"
 
         print 'name:',name
         print 'level:',level    # define the area for source detection: noise <= level * noise.min() 
@@ -261,7 +261,7 @@ class scuba850(object):
 class scuba450(object):
   
     def __init__(self, image):
-        """load the fits file"""
+        "load the fits file"
         data=fits.open(image)
         s1=data[0].data[0,:,:]   
         s2=data[1].data[0,:,:]  
@@ -282,13 +282,13 @@ class scuba450(object):
         self.snr = s3
 
     def mkrms(self, name='s4_rms.fits'):
-        """write the rms map to a fits file"""
+        "write the rms map to a fits file"
         fits.writeto(name, self.noise, header=self.header,overwrite=True)
         print 'central noise value (mJy/beam):', self.noise.min()
     
 
     def mkpsf(self, name='psf450.fits', level=3.0, thresh=4.0):
-        """ make the PSF """
+        "make the PSF"
         print 'name:',name
         print 'level:',level
         print 'thresh:',thresh
@@ -348,7 +348,7 @@ class scuba450(object):
         return psf
 
     def extract(self,name,level=3.0,thresh=4.0,blend=3.75,r_psf=30,psf=None):
-        """run source extraction, producing a csv file, a region file, and residul images"""
+        "run source extraction, producing a csv file, a region file, and residul images"
 
         print 'name:',name
         print 'level:',level
